@@ -1,0 +1,31 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{# copied from product.twig-files #}
+{# the purpose of this files is not being accurate right but to being loadable #}
+
+{% from 'SyliusResourceBundle:Macros:actions.html.twig' import update %}
+
+{# % block javascripts %}
+    {{ parent() }}
+    {% javascripts output='assets/compiled/backend_product.js'
+    'bundles/syliusshipping/js/prototype-handler.js'
+    'bundles/syliusweb/js/dynamic-property-types.js'
+    'bundles/syliusattribute/js/sylius-attribute.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock % #}
+
+{% block topbar %}
+    <ol class="breadcrumb">
+        <li>{{ 'sylius.breadcrumb.assortment'|trans }}</li>
+        <li><a href="{{ path('app_admin_book_index') }}">Books</a></li>
+        <li><a href="{{ path('app_admin_book_show', {'id': book.id}) }}">{{ book.title }}</a></li>
+        <li>{{ 'sylius.breadcrumb.edit'|trans }}</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+{% render(url('sylius_backend_product_attributes')) %}
