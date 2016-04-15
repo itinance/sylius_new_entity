@@ -1,3 +1,43 @@
+demonstration purposes to show a valid way to create a new entity/model/resource via ResourceBundle
+and integrate it into the Backend.
+
+Current state: not possible
+ 
+ 
+Installation:
+
+1. php app/console sylius:install
+2. Add some records into table "book" of your database (title only, ID is autoincrement)
+
+3. php app/console server:run
+
+4. Open http://localhost:8000
+
+5. Then login, enter the administration panel. Everything should work fine here.
+
+6. Open http://localhost:8000/administration/books/1/edit (if a book with ID=1 is present) 
+Everything should work fine here.
+
+7. Open http://localhost:8000/administration/books/  
+This should give a list of all books. What really happens: 
+"Unable to find template "AppBundle:Book/Backend:index.twig"."
+
+7. Open http://localhost:8000/administration/books/new/  
+This should give a page with the create.html.twig template from src/AppBundle/Resources/views/Book/Backend/create.html.twig. 
+-> "Unable to find template "AppBundle:Book/Backend:create.twig"."
+
+
+
+
+
+
+-------------------------------------------------------------------------
+
+
+
+
+
+
 ![Sylius](https://dl.dropboxusercontent.com/u/46579820/sylius-logo.jpg)
 
 [![Gitter chat](https://badges.gitter.im/Sylius/Sylius.png)](https://gitter.im/Sylius/Sylius)

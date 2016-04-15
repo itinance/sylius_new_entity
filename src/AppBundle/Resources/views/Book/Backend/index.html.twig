@@ -11,7 +11,7 @@
 </ol>
 {% endblock %}
 
-{% block content %}
+{# % block content %}
 <div class="page-header">
     <div class="actions-menu">
         {{ buttons.create(path('sylius_backend_product_create'), 'sylius.product.create'|trans) }}
@@ -30,7 +30,7 @@
 </div>
 
 {% render(controller('sylius.controller.backend.form:filterAction', {'type': 'sylius_product_filter', 'template': 'SyliusWebBundle:Backend/Product:filterForm.html.twig'})) %}
-
+#}
 {{ pagination(books) }}
 {{ list(books) }}
 {{ pagination(books) }}
